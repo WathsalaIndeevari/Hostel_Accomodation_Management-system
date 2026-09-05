@@ -38,7 +38,7 @@ View assigned requests · update status · add resolution details · mark as com
 ```
 Hostel-Accommodation-Management-System/
 ├── client/          # React + Vite + Tailwind frontend
-├── server/          # Node.js + Express + MongoDB backend
+├── backend/          # Node.js + Express + MongoDB backend
 ├── docs/            # SRS, UML diagrams, ER diagram, wireframes, reports
 └── README.md
 ```
@@ -78,7 +78,7 @@ Runs at `http://localhost:5173`. The frontend works against mock data out of the
 cd server
 npm install
 cp .env.example .env      # set MONGODB_URI, JWT_SECRET, PORT
-npm run dev
+npm start
 ```
 
 Runs at `http://localhost:5000` by default. API routes are prefixed with `/api`.
