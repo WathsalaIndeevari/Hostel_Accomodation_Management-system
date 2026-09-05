@@ -3,6 +3,8 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 import connectDB from "./config/database.js";
+import authRoutes from "./routes/authRoutes.js";
+
 import {
   notFound,
   errorHandler
@@ -39,6 +41,8 @@ app.get("/api/health", (req, res) => {
     timestamp: new Date().toISOString()
   });
 });
+
+app.use("/api/auth", authRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
