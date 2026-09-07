@@ -6,6 +6,7 @@ import connectDB from "./config/database.js";
 import authRoutes from "./routes/authRoutes.js";
 import roomRoutes from "./routes/roomRoutes.js";
 import hostelRoutes from "./routes/hostelRoutes.js";
+import applicationRoutes from "./routes/applicationRoutes.js";
 
 import {
   notFound,
@@ -47,6 +48,7 @@ app.get("/api/health", (req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/rooms", roomRoutes);
 app.use("/api/hostels", hostelRoutes);
+app.use("/api/applications", applicationRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
