@@ -31,11 +31,11 @@ export const createApplication = async (req, res, next) => {
     }
 
     if (!/^\d{4}\/\d{4}$/.test(academicYear.trim())) {
-      res.status(400);
-      throw new Error(
+    res.status(400);
+    throw new Error(
         "Academic year must use the format 2026/2027"
-      );
-    }
+    );
+}
 
     const [startYear, endYear] = academicYear
       .trim()
