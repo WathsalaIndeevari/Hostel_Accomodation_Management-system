@@ -8,6 +8,7 @@ import roomRoutes from "./routes/roomRoutes.js";
 import hostelRoutes from "./routes/hostelRoutes.js";
 import applicationRoutes from "./routes/applicationRoutes.js";
 
+import userRoutes from "./routes/userRoutes.js";
 import {
   notFound,
   errorHandler
@@ -49,6 +50,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/rooms", roomRoutes);
 app.use("/api/hostels", hostelRoutes);
 app.use("/api/applications", applicationRoutes);
+app.use("/api/users", userRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
