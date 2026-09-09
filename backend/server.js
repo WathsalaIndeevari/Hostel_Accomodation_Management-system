@@ -7,6 +7,7 @@ import authRoutes from "./routes/authRoutes.js";
 import roomRoutes from "./routes/roomRoutes.js";
 import hostelRoutes from "./routes/hostelRoutes.js";
 import applicationRoutes from "./routes/applicationRoutes.js";
+import allocationRoutes from "./routes/allocationRoutes.js";
 
 import userRoutes from "./routes/userRoutes.js";
 import {
@@ -51,6 +52,7 @@ app.use("/api/rooms", roomRoutes);
 app.use("/api/hostels", hostelRoutes);
 app.use("/api/applications", applicationRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/allocations", allocationRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
