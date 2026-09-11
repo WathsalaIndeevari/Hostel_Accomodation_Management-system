@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import path from "path";
 
 import connectDB from "./config/database.js";
 import authRoutes from "./routes/authRoutes.js";
@@ -8,6 +9,8 @@ import roomRoutes from "./routes/roomRoutes.js";
 import hostelRoutes from "./routes/hostelRoutes.js";
 import applicationRoutes from "./routes/applicationRoutes.js";
 import allocationRoutes from "./routes/allocationRoutes.js";
+import paymentRoutes from "./routes/paymentRoutes.js";
+
 
 import userRoutes from "./routes/userRoutes.js";
 import {
@@ -28,6 +31,11 @@ app.use(
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(
+  "/uploads",
+  express.static(path.join(process.cwd(), "uploads"))
+);
 
 app.get("/", (req, res) => {
   res.status(200).json({
@@ -53,6 +61,7 @@ app.use("/api/hostels", hostelRoutes);
 app.use("/api/applications", applicationRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/allocations", allocationRoutes);
+app.use("/api/payments", paymentRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
